@@ -31,26 +31,45 @@ public class JavaChallenge {
 
 
           // Askes a user to enter tax code  and accepts from the input from keyboard
+
           System.out.println("Enter Customer's TaxCode:(BIZ,NPF,NRM) ");
           keyboard = new Scanner(System.in);
           tax_Code=keyboard.next ();
+          if(tax_Code.equalsIgnoreCase ( "NRM" )||tax_Code.equalsIgnoreCase ( "NPF" )||tax_Code.equalsIgnoreCase ( "BIZ" ))
+          {
 
-         // Askes a user to enter sales amount and accepts from the input from keyboard
+              if(tax_Code.equalsIgnoreCase ( "NRM" ))
+              {
+                  tax_Amount=0.06;
+              }else if(tax_Code.equalsIgnoreCase ( "NPF" ))
+              {
+                  tax_Amount=0.00;
+              }else if(tax_Code.equalsIgnoreCase ( "BIZ" ))
+              {
+                  tax_Amount=0.045;
+              }
+
+
+          }else{
+              System.out.println("Enter Customer's TaxCode:(BIZ,NPF,NRM) Correct next time ");
+              System.exit ( 0 );
+              //while(tax_Code.equalsIgnoreCase ( "NRM" )||tax_Code.equalsIgnoreCase ( "NPF" )||tax_Code.equalsIgnoreCase ( "BIZ" ));
+          }
+
+
+
+
+
+
+
+
+
+          // Askes a user to enter sales amount and accepts from the input from keyboard
           System.out.println("Enter Customer's SalesAmount: ");
           keyboard = new Scanner(System.in);
           sales_Amount=keyboard.nextDouble();
 
           // checks what kind of tax code it is and assignes a tax amount
-          if(tax_Code.equalsIgnoreCase ( "NRM" ))
-          {
-              tax_Amount=0.06;
-          }else if(tax_Code.equalsIgnoreCase ( "NPF" ))
-          {
-              tax_Amount=0.00;
-          }else if(tax_Code.equalsIgnoreCase ( "BIZ" ))
-          {
-              tax_Amount=0.045;
-          }
 
 
 
@@ -112,11 +131,18 @@ public class JavaChallenge {
     private static void displayDetails(int customerId,String customerName,String taxCode,double salesAmount,double discount ,double taxAmount ,double totalAmount)
     {
         System.out.println("The Customer ID is :"+ customerId);
-        System.out.println("The Customer ID is :"+ customerName);
+        System.out.println("");
+
+        System.out.println("The Customers Name is :"+ customerName);
+        System.out.println("");
         System.out.println("The TaxCode is: :"+ taxCode);
+        System.out.println("");
         System.out.println("The  SalesAmount is :"+ salesAmount);
+        System.out.println("");
         System.out.println("The  DiscountAmount is :"+ discount);
+        System.out.println("");
         System.out.println("The  TaxAmount is :"+ taxAmount);
+        System.out.println("");
         System.out.println("The total Amount is :"+ totalAmount);
         System.out.println("");
     }
