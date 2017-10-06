@@ -34,30 +34,26 @@ public class JavaChallenge {
 
           System.out.println("Enter Customer's TaxCode:(BIZ,NPF,NRM) ");
           keyboard = new Scanner(System.in);
-          tax_Code=keyboard.next ();
-          if(tax_Code.equalsIgnoreCase ( "NRM" )||tax_Code.equalsIgnoreCase ( "NPF" )||tax_Code.equalsIgnoreCase ( "BIZ" ))
+          tax_Code=keyboard.nextLine ();
+
+
+
+
+          // checks what kind of tax code it is and assignes a tax amount
+
+          if(tax_Code.equalsIgnoreCase (  "NRM"))
           {
-
-              if(tax_Code.equalsIgnoreCase ( "NRM" ))
-              {
-                  tax_Amount=0.06;
-              }else if(tax_Code.equalsIgnoreCase ( "NPF" ))
-              {
-                  tax_Amount=0.00;
-              }else if(tax_Code.equalsIgnoreCase ( "BIZ" ))
-              {
-                  tax_Amount=0.045;
-              }
-
-
-          }else{
+              tax_Amount=0.06;
+          }else if (tax_Code.equalsIgnoreCase ( "NPF" ))
+          {
+              tax_Amount=0.00;
+          } else if (tax_Code.equalsIgnoreCase ( "BIZ" ))
+          {
+              tax_Amount=0.045;
+          } else {
               System.out.println("Please Enter Customer's TaxCode Correct next time!:(BIZ,NPF,NRM)  ");
-              System.exit ( 0 );
-              //while(tax_Code.equalsIgnoreCase ( "NRM" )||tax_Code.equalsIgnoreCase ( "NPF" )||tax_Code.equalsIgnoreCase ( "BIZ" ));
+
           }
-
-
-
 
 
 
@@ -69,7 +65,7 @@ public class JavaChallenge {
           keyboard = new Scanner(System.in);
           sales_Amount=keyboard.nextDouble();
 
-          // checks what kind of tax code it is and assignes a tax amount
+
 
 
 
@@ -77,15 +73,15 @@ public class JavaChallenge {
           if(sales_Amount>15000)
           {
              discount=0.03;
-              //System.out.println(sales_Amount);
+
           } else if (sales_Amount >10000)
           {
               discount=0.02;
-              //System.out.println(sales_Amount);
+
           } else if(sales_Amount>5000)
           {
               discount=0.01;
-              // System.out.println(sales_Amount);
+
           }
 
 
