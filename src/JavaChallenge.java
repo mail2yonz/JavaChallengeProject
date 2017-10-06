@@ -16,7 +16,7 @@ public class JavaChallenge {
 
         int customer_Id;
         String customer_Name,tax_Code;
-        double sales_Amount,total_Amount,tax_Amount=0.00;
+        double sales_Amount,discount=0.00,total_Amount,tax_Amount=0.00;
 
         // Creates a Scanner object called keyboard
         Scanner keyboard = new Scanner(System.in);
@@ -51,19 +51,43 @@ public class JavaChallenge {
           {
               tax_Amount=0.045;
           }
+
+
+
+          //This determines the discount amount
+          if(sales_Amount>15000)
+          {
+             discount=0.03;
+              //System.out.println(sales_Amount);
+          } else if (sales_Amount >10000)
+          {
+              discount=0.02;
+              //System.out.println(sales_Amount);
+          } else if(sales_Amount>5000)
+          {
+              discount=0.01;
+              // System.out.println(sales_Amount);
+          }
+
+
+
+
           //Applying a Discount
 
           if(sales_Amount>15000)
           {
-              sales_Amount=sales_Amount-(sales_Amount*.03);
+              discount=.03;
+              sales_Amount=sales_Amount-(sales_Amount*discount);
               //System.out.println(sales_Amount);
           } else if (sales_Amount >10000)
           {
-              sales_Amount=sales_Amount-(sales_Amount*.02);
+              discount=.02;
+              sales_Amount=sales_Amount-(sales_Amount*discount);
               //System.out.println(sales_Amount);
           } else if(sales_Amount>5000)
           {
-              sales_Amount=sales_Amount-(sales_Amount*.01);
+              discount=.01;
+              sales_Amount=sales_Amount-(sales_Amount*discount);
              // System.out.println(sales_Amount);
           }
 
@@ -71,7 +95,7 @@ public class JavaChallenge {
           total_Amount=sales_Amount + sales_Amount*tax_Amount;
 
           //Displayes the Record
-          displayDetails(customer_Id,customer_Name,tax_Code,sales_Amount,tax_Amount,total_Amount);
+          displayDetails(customer_Id,customer_Name,tax_Code,sales_Amount,discount,tax_Amount,total_Amount);
 
 
 
@@ -85,12 +109,13 @@ public class JavaChallenge {
     }
 
         //This displayDetails method Displays the record of a customer
-    private static void displayDetails(int customerId,String customerName,String taxCode,double salesAmount,double taxAmount ,double totalAmount)
+    private static void displayDetails(int customerId,String customerName,String taxCode,double salesAmount,double discount ,double taxAmount ,double totalAmount)
     {
         System.out.println("The Customer ID is :"+ customerId);
         System.out.println("The Customer ID is :"+ customerName);
         System.out.println("The TaxCode is: :"+ taxCode);
         System.out.println("The  SalesAmount is :"+ salesAmount);
+        System.out.println("The  DiscountAmount is :"+ discount);
         System.out.println("The  TaxAmount is :"+ taxAmount);
         System.out.println("The total Amount is :"+ totalAmount);
         System.out.println("");
