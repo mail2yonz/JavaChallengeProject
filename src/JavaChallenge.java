@@ -51,7 +51,7 @@ public class JavaChallenge {
 
 
           }else{
-              System.out.println("Enter Customer's TaxCode:(BIZ,NPF,NRM) Correct next time ");
+              System.out.println("Please Enter Customer's TaxCode Correct next time!:(BIZ,NPF,NRM)  ");
               System.exit ( 0 );
               //while(tax_Code.equalsIgnoreCase ( "NRM" )||tax_Code.equalsIgnoreCase ( "NPF" )||tax_Code.equalsIgnoreCase ( "BIZ" ));
           }
@@ -127,7 +127,7 @@ public class JavaChallenge {
 
     }
 
-        //This displayDetails method Displays the record of a customer
+        //This displayDetails method Displays the record of a customer to the screen
     private static void displayDetails(int customerId,String customerName,String taxCode,double salesAmount,double discount ,double taxAmount ,double totalAmount)
     {
         System.out.println("The Customer ID is :"+ customerId);
