@@ -51,6 +51,21 @@ public class JavaChallenge {
           {
               tax_Amount=0.045;
           }
+          //Applying a Discount
+
+          if(sales_Amount>15000)
+          {
+              sales_Amount=sales_Amount-(sales_Amount*.03);
+              //System.out.println(sales_Amount);
+          } else if (sales_Amount >10000)
+          {
+              sales_Amount=sales_Amount-(sales_Amount*.02);
+              //System.out.println(sales_Amount);
+          } else if(sales_Amount>5000)
+          {
+              sales_Amount=sales_Amount-(sales_Amount*.01);
+             // System.out.println(sales_Amount);
+          }
 
           //calculates the total amount
           total_Amount=sales_Amount + sales_Amount*tax_Amount;
